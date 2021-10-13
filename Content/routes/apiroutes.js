@@ -14,8 +14,10 @@ router.post ('/notes', (req, res) => {
     .noteAdd(req.body)
     .then((note) => res.json(note))
     .catch (err => res.status(500).json(err));
+    res.send('Thank you for adding a note!')
 });
 
+// Removes any note with a specific ID number
 router.delete ('/notes/:id', (req, res) => {
     store
     .noteRemove(req.params.id)
